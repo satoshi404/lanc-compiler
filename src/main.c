@@ -4,7 +4,7 @@
 
 
 int main() {
-    char* path[] = {"int number = 4;"};
+    char* path[] = {"int number = 88;"};
     ArrayMemoryAllocator* allocator = lanc_lexing(path);
 
     for (size_t i = 0; i < allocator->counter; ++i) {

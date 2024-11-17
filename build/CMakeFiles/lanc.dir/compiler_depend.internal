@@ -5,6 +5,7 @@ CMakeFiles/lanc.dir/src/lanc_lexer.c.o
  /home/satoshi/workspace/simple_compiler/src/lanc_lexer.c
  /home/satoshi/workspace/simple_compiler/includes/lanc_lexer.h
  /usr/include/alloca.h
+ /usr/include/ctype.h
  /usr/include/endian.h
  /usr/include/features-time64.h
  /usr/include/features.h

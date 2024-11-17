@@ -4,6 +4,7 @@
 CMakeFiles/lanc.dir/src/lanc_lexer.c.o: /home/satoshi/workspace/simple_compiler/src/lanc_lexer.c \
   /home/satoshi/workspace/simple_compiler/includes/lanc_lexer.h \
   /usr/include/alloca.h \
+  /usr/include/ctype.h \
   /usr/include/endian.h \
   /usr/include/features-time64.h \
   /usr/include/features.h \
@@ -124,9 +125,9 @@ CMakeFiles/lanc.dir/src/main.c.o: /home/satoshi/workspace/simple_compiler/src/ma
 
 /usr/lib/gcc/x86_64-linux-gnu/13/include/stddef.h:
 
-/usr/include/alloca.h:
+/usr/lib/gcc/x86_64-linux-gnu/13/include/stdarg.h:
 
-/usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h:
+/usr/include/x86_64-linux-gnu/bits/struct_rwlock.h:
 
 /usr/include/x86_64-linux-gnu/bits/thread-shared-types.h:
 
@@ -135,10 +136,6 @@ CMakeFiles/lanc.dir/src/main.c.o: /home/satoshi/workspace/simple_compiler/src/ma
 /usr/include/x86_64-linux-gnu/gnu/stubs.h:
 
 /usr/include/x86_64-linux-gnu/bits/stdint-intn.h:
-
-/usr/include/x86_64-linux-gnu/bits/struct_rwlock.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/13/include/stdarg.h:
 
 /usr/include/x86_64-linux-gnu/bits/floatn.h:
 
@@ -158,10 +155,6 @@ CMakeFiles/lanc.dir/src/main.c.o: /home/satoshi/workspace/simple_compiler/src/ma
 
 /usr/include/features-time64.h:
 
-/home/satoshi/workspace/simple_compiler/src/lanc_lexer.c:
-
-/usr/include/x86_64-linux-gnu/bits/types/cookie_io_functions_t.h:
-
 /usr/include/stdlib.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/locale_t.h:
@@ -177,6 +170,14 @@ CMakeFiles/lanc.dir/src/main.c.o: /home/satoshi/workspace/simple_compiler/src/ma
 /usr/include/endian.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/timer_t.h:
+
+/usr/include/alloca.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/cookie_io_functions_t.h:
+
+/home/satoshi/workspace/simple_compiler/src/lanc_lexer.c:
 
 /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h:
 
@@ -201,6 +202,8 @@ CMakeFiles/lanc.dir/src/main.c.o: /home/satoshi/workspace/simple_compiler/src/ma
 /usr/include/string.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h:
+
+/usr/include/ctype.h:
 
 /usr/include/x86_64-linux-gnu/bits/uintn-identity.h:
 
