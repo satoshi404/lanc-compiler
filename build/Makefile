@@ -129,6 +129,30 @@ lanc/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/lanc.dir/build.make CMakeFiles/lanc.dir/build
 .PHONY : lanc/fast
 
+src/lanc_lexer.o: src/lanc_lexer.c.o
+.PHONY : src/lanc_lexer.o
+
+# target to build an object file
+src/lanc_lexer.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lanc.dir/build.make CMakeFiles/lanc.dir/src/lanc_lexer.c.o
+.PHONY : src/lanc_lexer.c.o
+
+src/lanc_lexer.i: src/lanc_lexer.c.i
+.PHONY : src/lanc_lexer.i
+
+# target to preprocess a source file
+src/lanc_lexer.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lanc.dir/build.make CMakeFiles/lanc.dir/src/lanc_lexer.c.i
+.PHONY : src/lanc_lexer.c.i
+
+src/lanc_lexer.s: src/lanc_lexer.c.s
+.PHONY : src/lanc_lexer.s
+
+# target to generate assembly for a file
+src/lanc_lexer.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lanc.dir/build.make CMakeFiles/lanc.dir/src/lanc_lexer.c.s
+.PHONY : src/lanc_lexer.c.s
+
 src/main.o: src/main.c.o
 .PHONY : src/main.o
 
@@ -162,6 +186,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... lanc"
+	@echo "... src/lanc_lexer.o"
+	@echo "... src/lanc_lexer.i"
+	@echo "... src/lanc_lexer.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

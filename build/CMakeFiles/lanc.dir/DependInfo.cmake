@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/home/satoshi/workspace/simple_compiler/src/lanc_lexer.c" "CMakeFiles/lanc.dir/src/lanc_lexer.c.o" "gcc" "CMakeFiles/lanc.dir/src/lanc_lexer.c.o.d"
   "/home/satoshi/workspace/simple_compiler/src/main.c" "CMakeFiles/lanc.dir/src/main.c.o" "gcc" "CMakeFiles/lanc.dir/src/main.c.o.d"
   )
 
