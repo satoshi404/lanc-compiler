@@ -1,0 +1,1 @@
+/usr/bin/cc CMakeFiles/lanc.dir/src/main.c.o -o lanc 
