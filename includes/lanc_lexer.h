@@ -1,7 +1,9 @@
 #ifndef _LANC_LEXER_H_
 #define _LANC_LEXER_H_
+#include <stdio.h>
 
-typedef struct LanceToken LancToken;
+typedef struct LancToken LancToken;
+typedef struct ArrayMemoryAllocator ArrayMemoryAllocator;
 
 typedef enum {
     KIND_TOKEN_INT, // The keyword 'int'
@@ -9,19 +11,29 @@ typedef enum {
     // -----------------------------------------------------------------------------
     KIND_TOKEN_PLUS, // The operator '+' 
     // -----------------------------------------------------------------------------
+    KIND_TOKEN_OPENPAREN, // The operator '(' 
+    KIND_TOKEN_CLOSEPAREN, // The operator ')'
+    // -----------------------------------------------------------------------------
     KIND_TOKEN_IDENTIFIER, // The identifier 'identifier'
     KIND_TOKEN_NUMBER, // The number 'number'
 } Tokind;
 
 
-struct LanceToken {
+struct LancToken {
     Tokind tkind; // Token kind Tokind lol
+    char* tkstr; // Token to string
     char* name; // If token is identifier
     int value; // If token is number
     int line, column; // Token position (line, column)
 };
 
-LancToken* lanc_lexing(char* input);
+struct ArrayMemoryAllocator {
+    LancToken* items; // Items of the array
+    size_t capacity; // Capacity of memory allocated
+    size_t counter; // Size of memory allocated
+};
+
+ArrayMemoryAllocator* lanc_lexing(char** path);
 
 
 #endif /* _LANC_LEXER_H_ */
