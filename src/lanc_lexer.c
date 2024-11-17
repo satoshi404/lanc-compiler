@@ -26,7 +26,7 @@ static void lanc_lexer_allocator_append(ArrayMemoryAllocator* allocator, LancTok
     allocator->items[allocator->counter++] = token;
 } 
 
-static void  lanc_lexer_tokenizer(ArrayMemoryAllocator* allocator, char** path ,size_t size) {
+static void lanc_lexer_tokenizer(ArrayMemoryAllocator* allocator, char** path, size_t size) {
     unsigned int line = 0;
     unsigned int column = 0;
 
@@ -62,10 +62,20 @@ static void  lanc_lexer_tokenizer(ArrayMemoryAllocator* allocator, char** path ,
                 }
                 lanc_lexer_allocator_append(allocator, lanc_lexer_make_token(KIND_TOKEN_NUMBER, line, column - (int)strlen(path[line] + column - value), "<NUMBER>", NULL, value));
                 continue;
+            } else if (path[line][column] == '=') {
+                lanc_lexer_allocator_append(allocator, lanc_lexer_make_token(KIND_TOKEN_EQUALS, line, column, "<EQUALS>", NULL, 0));
+                column++;
+                continue;
+            } else if (path[line][column] == ';') {
+                lanc_lexer_allocator_append(allocator, lanc_lexer_make_token(KIND_TOKEN_SEMICOLON, line, column, "<SEMICOLON>", NULL, 0));
+                column++;
+                continue;
             }
             column++; 
         }
     }
+    // Append the EOF token.  This is a special token that signals the end of the input.
+    lanc_lexer_allocator_append(allocator, lanc_lexer_make_token(KIND_TOKEN_EOF, 0, 0, "<EOF>", NULL, 0));
 }
 
 ArrayMemoryAllocator* lanc_lexing(char** path) {

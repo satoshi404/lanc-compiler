@@ -7,12 +7,14 @@ typedef struct ArrayMemoryAllocator ArrayMemoryAllocator;
 
 typedef enum {
     KIND_TOKEN_INT, // The keyword 'int'
-    KIND_TOKEN_EOF, // The 'EOF' for limitation tokens list
     // -----------------------------------------------------------------------------
     KIND_TOKEN_PLUS, // The operator '+' 
     // -----------------------------------------------------------------------------
     KIND_TOKEN_OPENPAREN, // The operator '(' 
     KIND_TOKEN_CLOSEPAREN, // The operator ')'
+    KIND_TOKEN_EQUALS, // The operator '='
+    KIND_TOKEN_SEMICOLON, // The operator ';'
+    KIND_TOKEN_EOF, // The 'EOF' for limitation tokens list
     // -----------------------------------------------------------------------------
     KIND_TOKEN_IDENTIFIER, // The identifier 'identifier'
     KIND_TOKEN_NUMBER, // The number 'number'
