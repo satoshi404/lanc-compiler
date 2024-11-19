@@ -55,7 +55,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/satoshi/workspace/simple_compiler/build"
+			"value" : "/home/satoshi/workspace/lanc-compiler/build"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -415,7 +415,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/satoshi/workspace/simple_compiler/build/CMakeFiles/pkgRedirects"
+			"value" : "/home/satoshi/workspace/lanc-compiler/build/CMakeFiles/pkgRedirects"
 		},
 		{
 			"name" : "CMAKE_GENERATOR",
@@ -475,7 +475,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/satoshi/workspace/simple_compiler"
+			"value" : "/home/satoshi/workspace/lanc-compiler"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -1099,7 +1099,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/satoshi/workspace/simple_compiler/build"
+			"value" : "/home/satoshi/workspace/lanc-compiler/build"
 		},
 		{
 			"name" : "lanc_IS_TOP_LEVEL",
@@ -1123,7 +1123,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/satoshi/workspace/simple_compiler"
+			"value" : "/home/satoshi/workspace/lanc-compiler"
 		}
 	],
 	"kind" : "cache",

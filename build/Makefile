@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/satoshi/workspace/simple_compiler
+CMAKE_SOURCE_DIR = /home/satoshi/workspace/lanc-compiler
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/satoshi/workspace/simple_compiler/build
+CMAKE_BINARY_DIR = /home/satoshi/workspace/lanc-compiler/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/satoshi/workspace/simple_compiler/build/CMakeFiles /home/satoshi/workspace/simple_compiler/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/satoshi/workspace/lanc-compiler/build/CMakeFiles /home/satoshi/workspace/lanc-compiler/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/satoshi/workspace/simple_compiler/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/satoshi/workspace/lanc-compiler/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -153,6 +153,30 @@ src/lanc_lexer.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/lanc.dir/build.make CMakeFiles/lanc.dir/src/lanc_lexer.c.s
 .PHONY : src/lanc_lexer.c.s
 
+src/lanc_parser.o: src/lanc_parser.c.o
+.PHONY : src/lanc_parser.o
+
+# target to build an object file
+src/lanc_parser.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lanc.dir/build.make CMakeFiles/lanc.dir/src/lanc_parser.c.o
+.PHONY : src/lanc_parser.c.o
+
+src/lanc_parser.i: src/lanc_parser.c.i
+.PHONY : src/lanc_parser.i
+
+# target to preprocess a source file
+src/lanc_parser.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lanc.dir/build.make CMakeFiles/lanc.dir/src/lanc_parser.c.i
+.PHONY : src/lanc_parser.c.i
+
+src/lanc_parser.s: src/lanc_parser.c.s
+.PHONY : src/lanc_parser.s
+
+# target to generate assembly for a file
+src/lanc_parser.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lanc.dir/build.make CMakeFiles/lanc.dir/src/lanc_parser.c.s
+.PHONY : src/lanc_parser.c.s
+
 src/main.o: src/main.c.o
 .PHONY : src/main.o
 
@@ -189,6 +213,9 @@ help:
 	@echo "... src/lanc_lexer.o"
 	@echo "... src/lanc_lexer.i"
 	@echo "... src/lanc_lexer.s"
+	@echo "... src/lanc_parser.o"
+	@echo "... src/lanc_parser.i"
+	@echo "... src/lanc_parser.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

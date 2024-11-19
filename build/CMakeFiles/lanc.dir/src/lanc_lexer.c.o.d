@@ -1,7 +1,7 @@
 CMakeFiles/lanc.dir/src/lanc_lexer.c.o: \
- /home/satoshi/workspace/simple_compiler/src/lanc_lexer.c \
+ /home/satoshi/workspace/lanc-compiler/src/lanc_lexer.c \
  /usr/include/stdc-predef.h \
- /home/satoshi/workspace/simple_compiler/includes/lanc_lexer.h \
+ /home/satoshi/workspace/lanc-compiler/includes/lanc_lexer.h \
  /usr/include/stdio.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
  /usr/include/features.h /usr/include/features-time64.h \

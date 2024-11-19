@@ -1,1 +1,1 @@
-/usr/bin/cc -g CMakeFiles/lanc.dir/src/lanc_lexer.c.o CMakeFiles/lanc.dir/src/main.c.o -o lanc 
+/usr/bin/cc -g CMakeFiles/lanc.dir/src/lanc_lexer.c.o CMakeFiles/lanc.dir/src/lanc_parser.c.o CMakeFiles/lanc.dir/src/main.c.o -o lanc 

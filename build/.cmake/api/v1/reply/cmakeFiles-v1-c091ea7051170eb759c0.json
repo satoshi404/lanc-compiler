@@ -420,8 +420,8 @@
 	"kind" : "cmakeFiles",
 	"paths" : 
 	{
-		"build" : "/home/satoshi/workspace/simple_compiler/build",
-		"source" : "/home/satoshi/workspace/simple_compiler"
+		"build" : "/home/satoshi/workspace/lanc-compiler/build",
+		"source" : "/home/satoshi/workspace/lanc-compiler"
 	},
 	"version" : 
 	{

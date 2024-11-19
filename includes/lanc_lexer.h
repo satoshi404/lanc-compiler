@@ -38,4 +38,19 @@ struct ArrayMemoryAllocator {
 ArrayMemoryAllocator* lanc_lexing(char** path);
 
 
+const char* to_kind_string(Tokind kind) {
+    switch (kind) {
+        case KIND_TOKEN_INT: return "INT"; break;
+        case KIND_TOKEN_PLUS: return "+"; break;
+        case KIND_TOKEN_OPENPAREN: return "("; break;
+        case KIND_TOKEN_CLOSEPAREN: return ")"; break;
+        case KIND_TOKEN_EQUALS: return "="; break;
+        case KIND_TOKEN_SEMICOLON: return ";"; break;
+        case KIND_TOKEN_IDENTIFIER: return "ID"; break;
+        case KIND_TOKEN_NUMBER: return "NUMBER"; break;
+        default: return "UNKNOWN"; break;
+    }
+}
+
+
 #endif /* _LANC_LEXER_H_ */

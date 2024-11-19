@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/satoshi/workspace/simple_compiler
+CMAKE_SOURCE_DIR = /home/satoshi/workspace/lanc-compiler
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/satoshi/workspace/simple_compiler/build
+CMAKE_BINARY_DIR = /home/satoshi/workspace/lanc-compiler/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/lanc.dir/depend.make
@@ -70,46 +70,62 @@ include CMakeFiles/lanc.dir/progress.make
 include CMakeFiles/lanc.dir/flags.make
 
 CMakeFiles/lanc.dir/src/lanc_lexer.c.o: CMakeFiles/lanc.dir/flags.make
-CMakeFiles/lanc.dir/src/lanc_lexer.c.o: /home/satoshi/workspace/simple_compiler/src/lanc_lexer.c
+CMakeFiles/lanc.dir/src/lanc_lexer.c.o: /home/satoshi/workspace/lanc-compiler/src/lanc_lexer.c
 CMakeFiles/lanc.dir/src/lanc_lexer.c.o: CMakeFiles/lanc.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/satoshi/workspace/simple_compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/lanc.dir/src/lanc_lexer.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/lanc.dir/src/lanc_lexer.c.o -MF CMakeFiles/lanc.dir/src/lanc_lexer.c.o.d -o CMakeFiles/lanc.dir/src/lanc_lexer.c.o -c /home/satoshi/workspace/simple_compiler/src/lanc_lexer.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/satoshi/workspace/lanc-compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/lanc.dir/src/lanc_lexer.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/lanc.dir/src/lanc_lexer.c.o -MF CMakeFiles/lanc.dir/src/lanc_lexer.c.o.d -o CMakeFiles/lanc.dir/src/lanc_lexer.c.o -c /home/satoshi/workspace/lanc-compiler/src/lanc_lexer.c
 
 CMakeFiles/lanc.dir/src/lanc_lexer.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/lanc.dir/src/lanc_lexer.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/satoshi/workspace/simple_compiler/src/lanc_lexer.c > CMakeFiles/lanc.dir/src/lanc_lexer.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/satoshi/workspace/lanc-compiler/src/lanc_lexer.c > CMakeFiles/lanc.dir/src/lanc_lexer.c.i
 
 CMakeFiles/lanc.dir/src/lanc_lexer.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/lanc.dir/src/lanc_lexer.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/satoshi/workspace/simple_compiler/src/lanc_lexer.c -o CMakeFiles/lanc.dir/src/lanc_lexer.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/satoshi/workspace/lanc-compiler/src/lanc_lexer.c -o CMakeFiles/lanc.dir/src/lanc_lexer.c.s
+
+CMakeFiles/lanc.dir/src/lanc_parser.c.o: CMakeFiles/lanc.dir/flags.make
+CMakeFiles/lanc.dir/src/lanc_parser.c.o: /home/satoshi/workspace/lanc-compiler/src/lanc_parser.c
+CMakeFiles/lanc.dir/src/lanc_parser.c.o: CMakeFiles/lanc.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/satoshi/workspace/lanc-compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/lanc.dir/src/lanc_parser.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/lanc.dir/src/lanc_parser.c.o -MF CMakeFiles/lanc.dir/src/lanc_parser.c.o.d -o CMakeFiles/lanc.dir/src/lanc_parser.c.o -c /home/satoshi/workspace/lanc-compiler/src/lanc_parser.c
+
+CMakeFiles/lanc.dir/src/lanc_parser.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/lanc.dir/src/lanc_parser.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/satoshi/workspace/lanc-compiler/src/lanc_parser.c > CMakeFiles/lanc.dir/src/lanc_parser.c.i
+
+CMakeFiles/lanc.dir/src/lanc_parser.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/lanc.dir/src/lanc_parser.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/satoshi/workspace/lanc-compiler/src/lanc_parser.c -o CMakeFiles/lanc.dir/src/lanc_parser.c.s
 
 CMakeFiles/lanc.dir/src/main.c.o: CMakeFiles/lanc.dir/flags.make
-CMakeFiles/lanc.dir/src/main.c.o: /home/satoshi/workspace/simple_compiler/src/main.c
+CMakeFiles/lanc.dir/src/main.c.o: /home/satoshi/workspace/lanc-compiler/src/main.c
 CMakeFiles/lanc.dir/src/main.c.o: CMakeFiles/lanc.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/satoshi/workspace/simple_compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/lanc.dir/src/main.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/lanc.dir/src/main.c.o -MF CMakeFiles/lanc.dir/src/main.c.o.d -o CMakeFiles/lanc.dir/src/main.c.o -c /home/satoshi/workspace/simple_compiler/src/main.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/satoshi/workspace/lanc-compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/lanc.dir/src/main.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/lanc.dir/src/main.c.o -MF CMakeFiles/lanc.dir/src/main.c.o.d -o CMakeFiles/lanc.dir/src/main.c.o -c /home/satoshi/workspace/lanc-compiler/src/main.c
 
 CMakeFiles/lanc.dir/src/main.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/lanc.dir/src/main.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/satoshi/workspace/simple_compiler/src/main.c > CMakeFiles/lanc.dir/src/main.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/satoshi/workspace/lanc-compiler/src/main.c > CMakeFiles/lanc.dir/src/main.c.i
 
 CMakeFiles/lanc.dir/src/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/lanc.dir/src/main.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/satoshi/workspace/simple_compiler/src/main.c -o CMakeFiles/lanc.dir/src/main.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/satoshi/workspace/lanc-compiler/src/main.c -o CMakeFiles/lanc.dir/src/main.c.s
 
 # Object files for target lanc
 lanc_OBJECTS = \
 "CMakeFiles/lanc.dir/src/lanc_lexer.c.o" \
+"CMakeFiles/lanc.dir/src/lanc_parser.c.o" \
 "CMakeFiles/lanc.dir/src/main.c.o"
 
 # External object files for target lanc
 lanc_EXTERNAL_OBJECTS =
 
 lanc: CMakeFiles/lanc.dir/src/lanc_lexer.c.o
+lanc: CMakeFiles/lanc.dir/src/lanc_parser.c.o
 lanc: CMakeFiles/lanc.dir/src/main.c.o
 lanc: CMakeFiles/lanc.dir/build.make
 lanc: CMakeFiles/lanc.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/satoshi/workspace/simple_compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable lanc"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/satoshi/workspace/lanc-compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking C executable lanc"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/lanc.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -121,6 +137,6 @@ CMakeFiles/lanc.dir/clean:
 .PHONY : CMakeFiles/lanc.dir/clean
 
 CMakeFiles/lanc.dir/depend:
-	cd /home/satoshi/workspace/simple_compiler/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/satoshi/workspace/simple_compiler /home/satoshi/workspace/simple_compiler /home/satoshi/workspace/simple_compiler/build /home/satoshi/workspace/simple_compiler/build /home/satoshi/workspace/simple_compiler/build/CMakeFiles/lanc.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/satoshi/workspace/lanc-compiler/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/satoshi/workspace/lanc-compiler /home/satoshi/workspace/lanc-compiler /home/satoshi/workspace/lanc-compiler/build /home/satoshi/workspace/lanc-compiler/build /home/satoshi/workspace/lanc-compiler/build/CMakeFiles/lanc.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/lanc.dir/depend
 

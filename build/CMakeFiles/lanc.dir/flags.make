@@ -4,7 +4,7 @@
 # compile C with /usr/bin/cc
 C_DEFINES = 
 
-C_INCLUDES = -I/home/satoshi/workspace/simple_compiler/includes
+C_INCLUDES = -I/home/satoshi/workspace/lanc-compiler/includes
 
 C_FLAGS = -g -std=gnu11
 

@@ -27,8 +27,6 @@ static void lanc_lexer_allocator_append(ArrayMemoryAllocator* allocator, LancTok
 } 
 
 static void lanc_lexer_tokenizer(ArrayMemoryAllocator* allocator, char** path, size_t size) {
-    unsigned int line = 0;
-    unsigned int column = 0;
 
     for (unsigned int line = 0; line < size; ++line) {
         for (unsigned int column = 0; column < strlen(path[line]);) {
@@ -76,6 +74,7 @@ static void lanc_lexer_tokenizer(ArrayMemoryAllocator* allocator, char** path, s
     }
     // Append the EOF token.  This is a special token that signals the end of the input.
     lanc_lexer_allocator_append(allocator, lanc_lexer_make_token(KIND_TOKEN_EOF, 0, 0, "<EOF>", NULL, 0));
+
 }
 
 ArrayMemoryAllocator* lanc_lexing(char** path) {

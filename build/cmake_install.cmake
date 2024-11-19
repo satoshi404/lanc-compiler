@@ -1,4 +1,4 @@
-# Install script for directory: /home/satoshi/workspace/simple_compiler
+# Install script for directory: /home/satoshi/workspace/lanc-compiler
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/satoshi/workspace/simple_compiler/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/satoshi/workspace/lanc-compiler/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

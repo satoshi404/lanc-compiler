@@ -1,14 +1,20 @@
 [
 {
-  "directory": "/home/satoshi/workspace/simple_compiler/build",
-  "command": "/usr/bin/cc  -I/home/satoshi/workspace/simple_compiler/includes -g -std=gnu11 -o CMakeFiles/lanc.dir/src/lanc_lexer.c.o -c /home/satoshi/workspace/simple_compiler/src/lanc_lexer.c",
-  "file": "/home/satoshi/workspace/simple_compiler/src/lanc_lexer.c",
+  "directory": "/home/satoshi/workspace/lanc-compiler/build",
+  "command": "/usr/bin/cc  -I/home/satoshi/workspace/lanc-compiler/includes -g -std=gnu11 -o CMakeFiles/lanc.dir/src/lanc_lexer.c.o -c /home/satoshi/workspace/lanc-compiler/src/lanc_lexer.c",
+  "file": "/home/satoshi/workspace/lanc-compiler/src/lanc_lexer.c",
   "output": "CMakeFiles/lanc.dir/src/lanc_lexer.c.o"
 },
 {
-  "directory": "/home/satoshi/workspace/simple_compiler/build",
-  "command": "/usr/bin/cc  -I/home/satoshi/workspace/simple_compiler/includes -g -std=gnu11 -o CMakeFiles/lanc.dir/src/main.c.o -c /home/satoshi/workspace/simple_compiler/src/main.c",
-  "file": "/home/satoshi/workspace/simple_compiler/src/main.c",
+  "directory": "/home/satoshi/workspace/lanc-compiler/build",
+  "command": "/usr/bin/cc  -I/home/satoshi/workspace/lanc-compiler/includes -g -std=gnu11 -o CMakeFiles/lanc.dir/src/lanc_parser.c.o -c /home/satoshi/workspace/lanc-compiler/src/lanc_parser.c",
+  "file": "/home/satoshi/workspace/lanc-compiler/src/lanc_parser.c",
+  "output": "CMakeFiles/lanc.dir/src/lanc_parser.c.o"
+},
+{
+  "directory": "/home/satoshi/workspace/lanc-compiler/build",
+  "command": "/usr/bin/cc  -I/home/satoshi/workspace/lanc-compiler/includes -g -std=gnu11 -o CMakeFiles/lanc.dir/src/main.c.o -c /home/satoshi/workspace/lanc-compiler/src/main.c",
+  "file": "/home/satoshi/workspace/lanc-compiler/src/main.c",
   "output": "CMakeFiles/lanc.dir/src/main.c.o"
 }
 ]
