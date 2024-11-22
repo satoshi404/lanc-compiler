@@ -6,27 +6,26 @@
 
 #define MAX_IDENTIFIER_BUFFER 256
 
-static LancToken lanc_lexer_make_token(Tokind tkind, unsigned int line, unsigned int column, char* tkstr, char * name, int value) {
-    LancToken token = {0};
-    token.tkind = tkind;
-    token.line = line + 1;
-    token.column = column + 1;
-    token.tkstr = tkstr;  // Don't copy the string, just keep a reference.  The caller will have to free the string if needed.
-    token.value = value;
-    token.name = name;
+static Token* lanc_lexer_make_token(Tokind tkind, unsigned int line, unsigned int column,  char * id, int lint32) {
+    Token* token = calloc(1, sizeof(Token));
+    token->self_kind = tkind;
+    token->line = line + 1;
+    token->column = column + 1;
+    token->lit_int32 = lint32;
+    token->id = id;
     return token;
 }
 
-static void lanc_lexer_allocator_append(ArrayMemoryAllocator* allocator, LancToken token) {
-    if (allocator->counter == allocator->capacity) {
+static void lanc_lexer_allocator_append(ArrayTokenAllocator* allocator, Token* token) {
+    if (allocator->size == allocator->capacity) {
         allocator->capacity *= 2;
-        allocator->items = realloc(allocator->items, allocator->capacity * sizeof(LancToken));
+        allocator->data = realloc(allocator->data, allocator->capacity * sizeof(Token*));
     }
 
-    allocator->items[allocator->counter++] = token;
+    allocator->data[allocator->size++] = token;
 } 
 
-static void lanc_lexer_tokenizer(ArrayMemoryAllocator* allocator, char** path, size_t size) {
+static void lanc_lexer_tokenizer(ArrayTokenAllocator* allocator, char** path, size_t size) {
 
     for (unsigned int line = 0; line < size; ++line) {
         for (unsigned int column = 0; column < strlen(path[line]);) {
@@ -34,8 +33,8 @@ static void lanc_lexer_tokenizer(ArrayMemoryAllocator* allocator, char** path, s
                 column++;
                 continue;
             } 
-            if (strncmp(&path[line][column], "int", 3) == 0) {
-               lanc_lexer_allocator_append(allocator, lanc_lexer_make_token(KIND_TOKEN_INT, line, column, "<INT>", NULL, 0));
+            if (strncmp(&path[line][column], "let", 3) == 0) {
+               lanc_lexer_allocator_append(allocator, lanc_lexer_make_token(KIND_TOKEN_LET, line, column, NULL, 0));
                column+=3;
                continue;
             } else if (isalpha(path[line][column])) {
@@ -49,8 +48,9 @@ static void lanc_lexer_tokenizer(ArrayMemoryAllocator* allocator, char** path, s
                     name[ptr++] = path[line][column];
                     column++;
                 }
+                printf("a = %s\n", name);
 
-                lanc_lexer_allocator_append(allocator, lanc_lexer_make_token(KIND_TOKEN_IDENTIFIER, line, column - (int)ptr, "<IDENTIFIER>", name, 0));
+                lanc_lexer_allocator_append(allocator, lanc_lexer_make_token(KIND_TOKEN_ID, line, column - (int)ptr, name, 0));
                 continue;
             } else if (isdigit(path[line][column])) {
                 int value = 0;
@@ -58,14 +58,14 @@ static void lanc_lexer_tokenizer(ArrayMemoryAllocator* allocator, char** path, s
                     value = value * 10 + (path[line][column] - '0');
                     column++;
                 }
-                lanc_lexer_allocator_append(allocator, lanc_lexer_make_token(KIND_TOKEN_NUMBER, line, column - (int)strlen(path[line] + column - value), "<NUMBER>", NULL, value));
+                lanc_lexer_allocator_append(allocator, lanc_lexer_make_token(KIND_TOKEN_INT, line, column - (int)strlen(path[line] + column - value), NULL, value));
                 continue;
             } else if (path[line][column] == '=') {
-                lanc_lexer_allocator_append(allocator, lanc_lexer_make_token(KIND_TOKEN_EQUALS, line, column, "<EQUALS>", NULL, 0));
+                lanc_lexer_allocator_append(allocator, lanc_lexer_make_token(KIND_TOKEN_EQ, line, column, NULL, 0));
                 column++;
                 continue;
             } else if (path[line][column] == ';') {
-                lanc_lexer_allocator_append(allocator, lanc_lexer_make_token(KIND_TOKEN_SEMICOLON, line, column, "<SEMICOLON>", NULL, 0));
+                lanc_lexer_allocator_append(allocator, lanc_lexer_make_token(KIND_TOKEN_SEMI, line, column, NULL, 0));
                 column++;
                 continue;
             }
@@ -73,15 +73,20 @@ static void lanc_lexer_tokenizer(ArrayMemoryAllocator* allocator, char** path, s
         }
     }
     // Append the EOF token.  This is a special token that signals the end of the input.
-    lanc_lexer_allocator_append(allocator, lanc_lexer_make_token(KIND_TOKEN_EOF, 0, 0, "<EOF>", NULL, 0));
+    lanc_lexer_allocator_append(allocator, lanc_lexer_make_token(KIND_TOKEN_EOF, 0, 0, NULL, 0));
 
 }
 
-ArrayMemoryAllocator* lanc_lexing(char** path) {
-    ArrayMemoryAllocator* allocator = malloc(sizeof(ArrayMemoryAllocator));
-    allocator->counter = 0;
-    allocator->capacity = 1;
-    allocator->items = malloc(allocator->capacity * sizeof(LancToken));
+static ArrayTokenAllocator* init_allocator() {
+    ArrayTokenAllocator* allocator =  (ArrayTokenAllocator*) calloc(1, sizeof(ArrayTokenAllocator));
+    allocator->size = 0;
+    allocator->capacity = 3;
+    allocator->data = (Token**) malloc(allocator->capacity * sizeof(Token*));
+    return allocator;
+}
+
+ArrayTokenAllocator* lanc_lexer(char** path) {
+    ArrayTokenAllocator* allocator = init_allocator();
 
     lanc_lexer_tokenizer(allocator, path, sizeof(path)/sizeof(path[0]));
     return allocator;

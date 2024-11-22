@@ -6,5 +6,5 @@ C_DEFINES =
 
 C_INCLUDES = -I/home/satoshi/workspace/lanc-compiler/includes
 
-C_FLAGS = -g -std=gnu11
+C_FLAGS = -std=gnu11
 
