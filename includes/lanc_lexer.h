@@ -7,11 +7,14 @@ typedef struct ArrayTokenAllocator ArrayTokenAllocator;
 
 typedef enum {
     KIND_TOKEN_LET, // The keyword 'let'
+    KIND_TOKEN_PROC,
     // -----------------------------------------------------------------------------
     KIND_TOKEN_PLUS, // The operator '+' 
     // -----------------------------------------------------------------------------
     KIND_TOKEN_OPENPAREN, // The operator '(' 
     KIND_TOKEN_CLOSEPAREN, // The operator ')'
+    KIND_TOKEN_OPENBRACE, // The operator '{'
+    KIND_TOKEN_CLOSEBRACE, // The operator '}'
     KIND_TOKEN_EQ, // The operator '='
     KIND_TOKEN_SEMI, // The operator ';'
     KIND_TOKEN_EOF, // The 'EOF' for limitation tokens list
@@ -34,7 +37,7 @@ struct ArrayTokenAllocator {
     size_t size; // Size of memory allocated
 };
 
-ArrayTokenAllocator* lanc_lexer(char** path);
+ArrayTokenAllocator* lanc_lexer(char** path, size_t size);
 
 
 

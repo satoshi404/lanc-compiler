@@ -1,0 +1,11 @@
+// Now i can comment
+// Global variables
+let nur = 20;
+let number2 = 10;
+let olo = 23;
+
+// Local variables
+proc main() {
+    // Statament block
+    let a = 20;
+} 

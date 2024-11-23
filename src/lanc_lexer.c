@@ -23,7 +23,8 @@ static void lanc_lexer_allocator_append(ArrayTokenAllocator* allocator, Token* t
     }
 
     allocator->data[allocator->size++] = token;
-} 
+}
+
 
 static void lanc_lexer_tokenizer(ArrayTokenAllocator* allocator, char** path, size_t size) {
 
@@ -33,9 +34,16 @@ static void lanc_lexer_tokenizer(ArrayTokenAllocator* allocator, char** path, si
                 column++;
                 continue;
             } 
-            if (strncmp(&path[line][column], "let", 3) == 0) {
+            if (strncmp(&path[line][column], "//", 2) == 0)  {
+                while (path[line][column] != '\n') { column++; }
+                continue;
+            } else if (strncmp(&path[line][column], "let", 3) == 0) {
                lanc_lexer_allocator_append(allocator, lanc_lexer_make_token(KIND_TOKEN_LET, line, column, NULL, 0));
                column+=3;
+               continue;
+            } else if (strncmp(&path[line][column], "proc", 4) == 0) {
+               lanc_lexer_allocator_append(allocator, lanc_lexer_make_token(KIND_TOKEN_PROC, line, column, NULL, 0));
+               column+=4;
                continue;
             } else if (isalpha(path[line][column])) {
                 char name[MAX_IDENTIFIER_BUFFER] = {0};
@@ -51,6 +59,7 @@ static void lanc_lexer_tokenizer(ArrayTokenAllocator* allocator, char** path, si
                 printf("a = %s\n", name);
 
                 lanc_lexer_allocator_append(allocator, lanc_lexer_make_token(KIND_TOKEN_ID, line, column - (int)ptr, name, 0));
+                
                 continue;
             } else if (isdigit(path[line][column])) {
                 int value = 0;
@@ -62,6 +71,22 @@ static void lanc_lexer_tokenizer(ArrayTokenAllocator* allocator, char** path, si
                 continue;
             } else if (path[line][column] == '=') {
                 lanc_lexer_allocator_append(allocator, lanc_lexer_make_token(KIND_TOKEN_EQ, line, column, NULL, 0));
+                column++;
+                continue;
+            } else if (path[line][column] == '(') {
+                lanc_lexer_allocator_append(allocator, lanc_lexer_make_token(KIND_TOKEN_OPENPAREN, line, column, NULL, 0));
+                column++;
+                continue;
+            } else if (path[line][column] == ')') {
+                lanc_lexer_allocator_append(allocator, lanc_lexer_make_token(KIND_TOKEN_CLOSEPAREN, line, column, NULL, 0));
+                column++;
+                continue;
+            } else if (path[line][column] == '{') {
+                lanc_lexer_allocator_append(allocator, lanc_lexer_make_token(KIND_TOKEN_OPENBRACE, line, column, NULL, 0));
+                column++;
+                continue;
+            } else if (path[line][column] == '}') {
+                lanc_lexer_allocator_append(allocator, lanc_lexer_make_token(KIND_TOKEN_CLOSEBRACE, line, column, NULL, 0));
                 column++;
                 continue;
             } else if (path[line][column] == ';') {
@@ -85,9 +110,9 @@ static ArrayTokenAllocator* init_allocator() {
     return allocator;
 }
 
-ArrayTokenAllocator* lanc_lexer(char** path) {
+ArrayTokenAllocator* lanc_lexer(char** path, size_t size) {
     ArrayTokenAllocator* allocator = init_allocator();
 
-    lanc_lexer_tokenizer(allocator, path, sizeof(path)/sizeof(path[0]));
+    lanc_lexer_tokenizer(allocator, path, size);
     return allocator;
 }
